@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="#">
     <title>Ирвас окна</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!-- Fonts -->
@@ -15,6 +15,7 @@
     <!-- Animate -->
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
+    
   </head>
 
   <body>
@@ -155,7 +156,7 @@
         </div>
 
         <!-- Tree -->
-        <div class="row tree glazing_content tabcontent">
+        <div class="row tree glazing_content tabcontent faded">
 
           <div class="col-md-6 no-padding">
            <div class="glazing_cold">
@@ -194,7 +195,7 @@
         </div> <!-- /Tree -->
 
         <!-- Aluminum -->
-        <div class="row aluminum glazing_content tabcontent">
+        <div class="row aluminum glazing_content tabcontent faded">
 
           <div class="col-md-6 no-padding">
            <div class="glazing_cold">
@@ -233,7 +234,7 @@
         </div> <!-- /Aluminum -->
 
         <!-- Plastic -->
-        <div class="row plastic glazing_content tabcontent">
+        <div class="row plastic glazing_content tabcontent faded">
 
           <div class="col-md-6 col-md-offset-3 no-padding">
             <div class="glazing_warm">
@@ -255,7 +256,7 @@
         </div> <!-- /Plastic -->
 
         <!-- French -->
-        <div class="row french glazing_content tabcontent">
+        <div class="row french glazing_content tabcontent faded">
 
           <div class="col-md-6 no-padding">
            <div class="glazing_cold">
@@ -294,7 +295,7 @@
         </div> <!-- /French -->
 
         <!-- Rise -->
-        <div class="row rise glazing_content tabcontent">
+        <div class="row rise glazing_content tabcontent faded">
 
           <div class="col-md-6 no-padding">
            <div class="glazing_cold">
@@ -715,10 +716,10 @@
             <div class="timer1" id="timer">
                 <p><h4>ДО ЗАВЕРШЕНИЯ АКЦИИ:</h4></p>
                 <div class="container1">
-                    <div class="numbers1"><div><span id="days">08</span></div><div class="description1">Дней</div></div>
-                    <div class="numbers1"><div><span id="hours">18</span></div><div class="description1">Часов</div></div>
-                    <div class="numbers1"><div><span id="minutes">33</span></div><div class="description1">Минут</div></div>
-                    <div class="numbers1"><div><span id="seconds">44</span></div><div class="description1">Секунд</div></div>      
+                    <div class="numbers1"><div><span id="days"></span></div><div class="description1">Дней</div></div>
+                    <div class="numbers1"><div><span id="hours"></span></div><div class="description1">Часов</div></div>
+                    <div class="numbers1"><div><span id="minutes"></span></div><div class="description1">Минут</div></div>
+                    <div class="numbers1"><div><span id="seconds"></span></div><div class="description1">Секунд</div></div>      
                 </div>
               </div>
           </div>
@@ -853,15 +854,15 @@
                       <img src="assets/img/modal_calc/balkon/ba_04.png" alt="Тип4"></span>
                   </div>
                    <div class="big_img text-center">
-                     <img src="assets/img/modal_calc/balkon/type1.png" alt="Тип1">
-                     <img src="assets/img/modal_calc/balkon/type2.png" alt="Тип2">
-                     <img src="assets/img/modal_calc/balkon/type3.png" alt="Тип3">
-                     <img src="assets/img/modal_calc/balkon/type4.png" alt="Тип4">
+                     <img data-glazing src="assets/img/modal_calc/balkon/type1.png" alt="Тип1">
+                     <img data-glazing src="assets/img/modal_calc/balkon/type2.png" alt="Тип2">
+                     <img data-glazing src="assets/img/modal_calc/balkon/type3.png" alt="Тип3">
+                     <img data-glazing src="assets/img/modal_calc/balkon/type4.png" alt="Тип4">
                    </div>
-                <input class="form-control" id="width" type="text" placeholder="Ширина" required>
+                <input data-calc class="form-control" id="width" type="text" placeholder="Ширина" required>
                 <label for="width">мм</label>
                 <div class="multiplication"><strong>&times;</strong></div>
-                <input class="form-control" id="height" type="text" placeholder="Высота" required>
+                <input data-calc class="form-control" id="height" type="text" placeholder="Высота" required>
                 <label for="height">мм</label>
                 <button class="button popup_calc_button">Далее</button>
             </div>
@@ -883,13 +884,13 @@
                  </select>
                  <img src="assets/img/modal_calc/icon_cold.png" alt="">
                  <label>
-                     <input class="checkbox" type="checkbox" name="checkbox-test">
+                     <input class="checkbox" type="checkbox" name="checkbox-test" id="cold-check">
                      <span class="checkbox-custom" id="cold"></span>
                      <span class="label">Холодное</span>
                  </label>
                  <img src="assets/img/modal_calc/icon_warm.png" alt="">
                  <label>
-                     <input class="checkbox" type="checkbox" name="checkbox-test">
+                     <input class="checkbox" type="checkbox" name="checkbox-test" id="warm-check">
                      <span class="checkbox-custom" id="warm"></span>
                      <span class="label">Теплое</span>
                  </label>
@@ -904,10 +905,10 @@
             <div class="popup_content text-center">
                 <button type="button" class="popup_calc_end_close"><strong>&times;</strong></button>
                 <div class="popup_form">
-                    <form class="form" action="#">
+                    <form class="form end" action="#">
                       <h2>Спасибо за обращение! <br>Оставьте свои данные</h2>
-                        <input class="form-control form_input" name="user_name" required type="text" placeholder="Введите ваше имя">
-                        <input class="form-control form_input" name="user_phone" required type="text" placeholder="Введите телефон">
+                        <input id="final-name" class="form-control form_input" name="user_name" required type="text" placeholder="Введите ваше имя">
+                        <input id="final-phone" class="form-control form_input" name="user_phone" required type="text" placeholder="Введите телефон">
                         <button class="text-uppercase btn-block button" name="submit" type="submit">Рассчитать стоимость</button>
                         <p class="form_notice">Перезвоним в течение 10 минут</p>
                     </form>
